@@ -4,21 +4,21 @@ class KialiClient(KialiBaseClient):
     def namespace_list(self):
         return self._get(self._get_namespaces_url())
 
-    def rules_list(self,namespace):
+    def rule_list(self,namespace):
         return self._get(self._get_rules_url(namespace))
 
 
-    def rule_details(self,namespace, rule):
+    def rule_detail(self,namespace, rule):
         return self._get(self._get_rules_detail_url(namespace, rule))
 
-    def services_list(self,namespace):
+    def service_list(self,namespace):
         return self._get(self._get_services_url((namespace)))
 
 
-    def service_details(self, namespace, service):
+    def service_detail(self, namespace, service):
         return self._get(self.get_services_details_url(namespace, service))
 
-    def service_metrics(self,namespace,service):
+    def service_metric(self,namespace,service):
         return self._get(self._get_service_metrics_url(namespace, service))
 
     def service_health(self,namespace,service):
